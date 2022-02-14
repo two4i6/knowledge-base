@@ -1,0 +1,14 @@
+site_name: Knowledge Base
+copyright: Copyright &copy; 2022 <a href="https://luobo.ca">luobo.ca</a>
+theme:
+  name: "material"
+  palette:
+    scheme: preference
+    primary: deep orange
+    accent: indigo
+  favicon: "imgs/logo.png"
+  logo: "imgs/logo.png"
+  features:
+    - navigation.expand
+    - search.highlight
+    - header.hide
