@@ -80,10 +80,3 @@ chmod 700 get_helm.sh
 /usr/local/bin/k3s-agent-uninstall.sh
 ```
 
-## 出现错误
-当出现 ```Error: INSTALLATION FAILED: Kubernetes cluster unreachable: Get "http://localhost:8080/version": dial tcp [::1]:8080: connect: connection refused```
-
-输入
-``` shell
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
-```
