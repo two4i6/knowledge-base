@@ -1,13 +1,4 @@
-## 下载Helm
-https://github.com/helm/helm/releases
-## 解压
-```
-tar -zxvf helm-v3.0.0-linux-amd64.tar.gz
-```
-## 安装Helm
-```
-mv linux-amd64/helm /usr/local/bin/helm
-```
+# 安装Rancher
 
 ## 添加Helm chart源
 ```
@@ -37,12 +28,3 @@ helm install rancher rancher-latest/rancher --namespace cattle-system --set host
 ```
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
-
-helm install rancher rancher-latest/rancher   --namespace cattle-system   --set hostname=rancher.luobo.ca   --set tls=external
-
-root@k3s-node1:~# kubectl get ns
-NAME              STATUS   AGE
-default           Active   4m26s
-kube-node-lease   Active   4m26s
-kube-public       Active   4m26s
-kube-system       Active   4m26s
