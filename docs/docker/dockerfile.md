@@ -1,34 +1,34 @@
 # Dockerfile
 Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。
 
-# 构建第一个镜像
+## 构建第一个镜像
 
-## 创建一个Dockerfile
+### 创建一个Dockerfile
 ``` Dockerfile
 FROM nginx:latest
 RUN echo '这是一个本地构建的nginx镜像' > /usr/share/nginx/html/index.html
 ```
 
-## 构建镜像
+### 构建镜像
 ```
 docker build -t nginx-local:latest .
 ```
 通过目录下的 Dockerfile 构建一个 nginx-local:latest（镜像名称:镜像标签）。
 
-> 注意最后的的```.```是代表本次执行的上下文路径。
+**注意**最后的的```.```是代表本次执行的上下文路径。
 
 上下文路径，是指 docker 在构建镜像，有时候想要使用到本机的文件（比如复制），docker build 命令得知这个路径后，会将路径下的所有内容打包。
 
-# 添加文件到镜像
+## 添加文件到镜像
 
-## 修改Dockerfile
+### 修改Dockerfile
 ``` Dockerfile
 FROM nginx:latest
 COPY index.html /usr/share/nginx/html/
 ```
 这里我们使用```COPY```指令，从上下文目录中复制文件或者目录到容器里指定路径。
 
-## ```COPY``` 指令 
+### ```COPY``` 指令 
 ```
 COPY [--chown=<user>:<group>] <源路径1>...  <目标路径>
 COPY [--chown=<user>:<group>] ["<源路径1>",...  "<目标路径>"]
@@ -40,10 +40,9 @@ COPY hom* /mydir/
 COPY hom?.txt /mydir/
 ```
 
-# 添加文件夹到镜像
+## 添加文件夹到镜像
 
-
-## 修改Dockerfile
+### 修改Dockerfile
 ``` Dockerfile
 FROM nginx:latest
 Add ./html /usr/share/nginx/html/
