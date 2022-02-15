@@ -33,7 +33,7 @@ sudo echo 'server: "https://master节点:6443"' >> /etc/rancher/k3s/config.yaml
 
 ### 安装其他master节点
 ``` shell
-curl -sfL https://get.k3s.io | sh - --disable traefik
+curl -sfL https://get.k3s.io | sh -s - --disable traefik
 ```
 
 ## 安装agent节点
@@ -51,7 +51,7 @@ k3s-node1   Ready    control-plane,etcd,master   45s    v1.22.6+k3s1
 k3s-node4   Ready    control-plane,etcd,master   60s    v1.22.6+k3s1
 ```
 
-## 安装helm
+# 安装helm
 在任意master节点安装helm
 ``` shell
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
@@ -61,42 +61,14 @@ chmod 700 get_helm.sh
 
 # 配置 loadbalancer
 
-使用 MetalLB 作为 load balancer
-
-### 创建values.yaml
-``` shell
-configInline:
-  address-pools:
-   - name: default
-     protocol: layer2
-     addresses:
-     - 192.168.0.120-192.168.0.130
-```
-配置一个由 MetalLB 二层模式控制的 service 外部 IP 段为 ```192.168.0.120-192.168.0.130```。
-
-### 通过helm安装 MetalLB
-``` shell
-helm repo add metallb https://metallb.github.io/metallb
-helm repo update
-helm install metallb metallb/metallb -f values.yaml --create-namespace -n metallb
-```
-
-### 检查MetalLB
-``` shell
-kubectl get pods -A
-
-```
+[使用 MetalLB 作为 load balancer](/k3s/metalLB)
 
 
 # 配置 ingress controller
 
-## 安装treafik ingress
-``` shell
-helm repo add traefik https://helm.traefik.io/traefik
-helm repo update
-kubectl create namespace treafik
-helm install traefik traefik/traefik -n treafik
-```
+[使用 treafik 作为 ingress controller](/k3s/treafik)
+
+# 其他
 
 ## 卸载k3s master节点
 ``` shell
