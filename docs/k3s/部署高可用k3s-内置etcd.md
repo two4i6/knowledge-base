@@ -74,18 +74,17 @@ kubectl create namespace treafik
 helm install traefik traefik/traefik -n treafik
 ```
 
-### 卸载k3s master节点
+## 卸载k3s master节点
 ``` shell
 /usr/local/bin/k3s-uninstall.sh
 ```
 
-### 卸载k3s agent节点
+##卸载k3s agent节点
 ```
 /usr/local/bin/k3s-agent-uninstall.sh
 ```
 
-
-
-
-
-docker logs  108e46b38832  2>&1 | grep "Bootstrap Password:"
+## 出现错误
+```
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+```
