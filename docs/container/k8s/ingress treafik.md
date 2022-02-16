@@ -17,3 +17,8 @@ kube-system   kube-dns         ClusterIP      10.43.0.10      <none>          53
 kube-system   metrics-server   ClusterIP      10.43.239.79    <none>          443/TCP                      10m
 treafik       traefik          LoadBalancer   10.43.212.101   192.168.0.120   80:30228/TCP,443:30832/TCP   34s
 ```
+
+## 配置第一个应用
+``` yaml
+
+```
