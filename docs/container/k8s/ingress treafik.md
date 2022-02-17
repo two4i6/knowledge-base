@@ -20,5 +20,23 @@ treafik       traefik          LoadBalancer   10.43.212.101   192.168.0.120   80
 
 ## 配置第一个应用
 ``` yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-ingress
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  rules:
+  - host: demo.luobo.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: demo-service
+            port:
+              number: 80
 
 ```
