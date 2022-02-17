@@ -23,20 +23,32 @@ treafik       traefik          LoadBalancer   10.43.212.101   192.168.0.120   80
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: demo-ingress
+  name: wp-clcreative
+  namespace: wp-clcreative
   annotations:
-    kubernetes.io/ingress.class: "traefik"
+    # (Optional): Annotations for the Ingress Controller
+    # ---
+    # General:
+    # kubernetes.io/ingress.class: traefik
+    # 
+    # TLS configuration:
+    # traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
+    # traefik.ingress.kubernetes.io/router.tls: "true"
+    # 
+    # Middleware:
+    # traefik.ingress.kubernetes.io/router.middlewares:your-middleware@kubernetescrd
 spec:
   rules:
-  - host: demo.luobo.local
+  - host: "your-hostname.com"  # Your hostname
     http:
       paths:
+      # Path-based routing settings:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: demo-service
+            name: your-service-name  # The name of the service
             port:
-              number: 80
+              number: 80  # Service Portnumber
 
 ```
