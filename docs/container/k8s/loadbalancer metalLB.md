@@ -24,6 +24,5 @@ helm install metallb metallb/metallb -f values.yaml --create-namespace -n metall
 
 ### 检查MetalLB
 ``` shell
-kubectl get pods -A
-
+kubectl get pods -n metallb
 ```

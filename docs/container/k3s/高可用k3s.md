@@ -4,7 +4,7 @@
 
 ## 创建一个master节点 并禁用自带的load balancer
 ``` shell
-curl -sfL https://get.k3s.io | sh -s - server --cluster-init - --disable traefik
+curl -sfL https://get.k3s.io | sh -s - server --cluster-init - --disable traefik --disable servicelb
 ```
 
 查看pods
@@ -22,18 +22,22 @@ kube-system   metrics-server-ff9dbcb6c-h2w67            1/1     Running   0     
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 
+## 配置 kube-vip
+[kube-vip](kube-vip)
+
+
 ## 创建其他master节点
 
 ### 新建配置文件
 ``` shell
 sudo mkdir -p /etc/rancher/k3s
 sudo echo 'token: "刚刚获取的token"' > /etc/rancher/k3s/config.yaml
-sudo echo 'server: "https://master节点:6443"' >> /etc/rancher/k3s/config.yaml
+sudo echo 'server: "https://kube-vip地址:6443"' >> /etc/rancher/k3s/config.yaml
 ```
 
 ### 安装其他master节点
 ``` shell
-curl -sfL https://get.k3s.io | sh -s - --disable traefik
+curl -sfL https://get.k3s.io | sh -s - --disable traefik --disable servicelb
 ```
 
 ## 安装agent节点
