@@ -1,3 +1,9 @@
+---
+tags:
+  - k8s 部署
+  - loadbalance
+---
+
 # 🕳️ MetlLB
 
 MetalLB 是一个开源的 loadbalance

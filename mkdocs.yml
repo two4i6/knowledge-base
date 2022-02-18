@@ -19,6 +19,10 @@ theme:
   favicon: "imgs/logo.png"
   logo: "imgs/logo.png"
   features:
-    - navigation.expand
     - search.highlight
     - header.hide
+    - toc.follow
+    - navigation.top
+  plugins:
+    - tags:
+        tags_file: tags.md

@@ -1,3 +1,9 @@
+---
+tags:
+  - k8s 部署
+  - ingress
+---
+
 # 🦫 Treafik + 🔒 Cloudflare
 
 使用 helm 安装 Treafik, 并自动配置证书。
