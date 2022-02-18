@@ -8,6 +8,8 @@ tags:
 
 MetalLB 是一个开源的 loadbalance
 
+---
+
 ## 💿 安装
 
 ### 创建values.yaml
@@ -27,6 +29,8 @@ helm repo add metallb https://metallb.github.io/metallb
 helm repo update
 helm install metallb metallb/metallb -f values.yaml --create-namespace -n metallb
 ```
+
+---
 
 ## 🔍 检查MetalLB
 ``` shell

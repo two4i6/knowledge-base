@@ -24,5 +24,4 @@ theme:
     - toc.follow
     - navigation.top
   plugins:
-    - tags:
-        tags_file: tags.md
+    - tags
