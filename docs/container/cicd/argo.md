@@ -2,7 +2,7 @@
 
 ---
 
-## 安装 argo-cli
+## 💿 安装 argo-cli
 [argo-cli](https://github.com/argoproj/argo-workflows/releases)
 
 ``` shell
@@ -24,7 +24,7 @@ argo version
 
 ---
 
-## 安装 argo-server 和 argo-controller
+## 📀 安装 argo-server 和 argo-controller
 
 ### 使用yaml
 ```
@@ -41,16 +41,18 @@ helm repo add argo https://argoproj.github.io/argo-helm
 
 ---
 
-## 测试
+## 🧪 测试
 ``` shell
 argo submit -n argo --watch https://raw.githubusercontent.com/argoproj/argo-workflows/master/examples/hello-world.yaml
 ```
 
 ---
 
-## 使用 argo-UI
+## 👩‍💻 使用 argo-UI
 
-### 获取 auth-token
+为 argo service 配置 ingress / node port
+
+### 🔒 获取 auth-token
 ```
 kubectl -n argo exec pod/argo-argo-workflows-server-5f5889464c-f8fjm -- argo auth token
 ```
