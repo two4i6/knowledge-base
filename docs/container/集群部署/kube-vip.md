@@ -11,7 +11,7 @@ curl -s https://kube-vip.io/manifests/rbac.yaml > /var/lib/rancher/k3s/server/ma
 
 ## ⌨️ 配置变量
 
-### 🔍 检查 interface
+### 检查 interface
 ```
 ifconfig 
 ```

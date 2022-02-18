@@ -1,8 +1,8 @@
-# MetlLB
+# 🕳️ MetlLB
 
-## 安装
+MetalLB 是一个开源的 loadbalance
 
-通过helm安装
+## 💿 安装
 
 ### 创建values.yaml
 ``` shell
@@ -22,7 +22,7 @@ helm repo update
 helm install metallb metallb/metallb -f values.yaml --create-namespace -n metallb
 ```
 
-### 检查MetalLB
+## 🔍 检查MetalLB
 ``` shell
 kubectl get pods -n metallb
 ```

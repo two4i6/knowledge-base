@@ -78,9 +78,6 @@ chmod 700 get_helm.sh
 
 [使用 treafik 作为 ingress controller](/container/集群部署/ingress/traefik)
 
-### 配置 nginx ingress
-
-[使用 nginx 作为 ingress controller](/container/集群部署/ingress/nginx)
 
 ### 卸载k3s master节点
 ``` shell
