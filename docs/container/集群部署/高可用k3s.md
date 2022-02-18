@@ -1,19 +1,27 @@
-# 部署高可用k3s
+# 🏠 部署高可用k3s
 
-使用内置etcd来部署高可用k3s
+使用内置etcd来部署高可用k3s。
+
+---
 
 ## 🏠 创建一个master节点并禁用自带的 load balance 和 treafik
 ``` shell
 curl -sfL https://get.k3s.io | sh -s - server --cluster-init - --disable traefik --disable servicelb
 ```
 
+---
+
 ## ⚖️ 配置 kube-vip
-[kube-vip](/container/k3s/kube-vip)
+[kube-vip](/container/集群部署/kube-vip)
+
+---
 
 ## 🔒 获取 token
 ``` shell
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
+
+---
 
 ## 🏠 创建额外 master 节点
 
@@ -29,10 +37,14 @@ sudo echo 'server: "https://kube-vip地址:6443"' >> /etc/rancher/k3s/config.yam
 curl -sfL https://get.k3s.io | sh -s - --disable traefik --disable servicelb
 ```
 
+---
+
 ## 👷‍♀️ 创建 worker 节点
 ``` shell
 curl -sfL https://get.k3s.io | K3S_URL=https://master节点:6443 K3S_TOKEN=XXXXXXXXXXXXXXXXX sh - --disable traefik
 ```
+
+---
 
 ## 🔍 检查新的节点是否加入集群
 ``` shell
@@ -44,7 +56,9 @@ k3s-node1   Ready    control-plane,etcd,master   45s    v1.22.6+k3s1
 k3s-node4   Ready    control-plane,etcd,master   60s    v1.22.6+k3s1
 ```
 
-## 🔧 额外
+---
+
+## ⚙️ 额外
 
 ### 安装 helm
 在任意master节点安装helm
