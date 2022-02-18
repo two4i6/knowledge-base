@@ -16,5 +16,5 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_DOMAIN: page.poio.ca
+          CUSTOM_DOMAIN: page.poio.io
           EXTRA_PACKAGES: build-base
