@@ -1,0 +1,1 @@
+linear-gradient(black, #000099, #66c2ff, #ffcccc, #ffeee6) sky
