@@ -81,7 +81,7 @@ env:
      valueFrom:
        secretKeyRef:
          key: apiKey
-#         name: cloudflare-credentials
+         name: cloudflare-credentials
 
 # Disable Dashboard
 #ingressRoute:
