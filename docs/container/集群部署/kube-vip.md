@@ -1,31 +1,29 @@
+# 部署 kube-vip
 
-
-## 安装kube-vip
-
-### 下载配置文件
+## 📃 下载配置文件
 ```
 curl -s https://kube-vip.io/manifests/rbac.yaml > /var/lib/rancher/k3s/server/manifests/kube-vip-rbac.yaml
 ```
 
-## 编辑 kube-vip-rbac.yaml
+## ⌨️ 配置变量
 
+### 🔍 检查 interface
 ```
- - apiGroups: ["coordination.k8s.io"]
-    resources: ["leases"]
-    verbs: ["list", "get", "watch", "update", "create"]
-
+ifconfig 
 ```
 
-### 检查网口
-```
-ifconfig
-```
+### 设置变量
 
-### 在 /etc/kuberentes/manifests 中设置静态 pod 的 yaml 资源清单文件，这样 Kubernetes 就会自动在每个控制平面节点上部署 kube-vip 的 pod 了。
-```
+``` shell
 export VIP=192.168.0.100
 export INTERFACE=eth0
+```
+> ⚠️ ```VIP=192.168.0.100``` 是kube-vip的ip
 
+### 🪛 配置 manifests
+在 /etc/kuberentes/manifests 中设置静态 pod 的 yaml 资源清单文件，这样 Kubernetes 就会自动在每个控制平面节点上部署 kube-vip 的 pod 了。
+
+``` shell
 # pull image
 ctr image pull docker.io/plndr/kube-vip:latest
 
@@ -44,20 +42,34 @@ kube-vip manifest daemonset \
     --inCluster | tee /var/lib/rancher/k3s/server/manifests/kube-vip.yaml
 ```
 
-### 修改 kube-vip.yaml
+### 👩‍🔧 修改 kube-vip.yaml 
+
+``` shell
+nano /var/lib/rancher/k3s/server/manifests/kube-vip.yaml
 ```
+
+修改 ```tolerations``` 片段
+
+``` yaml
     tolerations:
     - effect: NoSchedule
     key: node-role.kubernetes.io/master
     operator: Exists
 ```
 
-### 测试
+### 🧪 测试 
 ```
 ping 192.168.0.100
 ```
 
-### 修改 /etc/rancher/k3s/k3s.yaml 
+### ⚙️ 修改 kubeconfig
+
+K3S: 
+``` shell
+nano /etc/rancher/k3s/k3s.yaml
+```
+
+修改 ```server``` 片段
 
 ```
 server: https://192.168.0.100:6443

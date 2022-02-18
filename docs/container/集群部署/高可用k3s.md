@@ -44,7 +44,7 @@ k3s-node1   Ready    control-plane,etcd,master   45s    v1.22.6+k3s1
 k3s-node4   Ready    control-plane,etcd,master   60s    v1.22.6+k3s1
 ```
 
-## ⚠️ 额外
+## 🔧 额外
 
 ### 安装 helm
 在任意master节点安装helm
@@ -54,17 +54,19 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 ```
 
+> 当使用 helm 安装的时候可能会提示 ```Kubernetes cluster unreachable``` 错误， [解决方法](/container/集群部署/常见问题)
+
 ### 配置 loadbalancer
 
-[使用 MetalLB 作为 load balancer](/container/k8s/loadbalancer metalLB)
+[使用 MetalLB 作为 load balancer](/container/集群部署/loadbalance/metalLB)
 
 ### 配置 treafik ingress
 
-[使用 treafik 作为 ingress controller](/container/k8s/ingress treafik)
+[使用 treafik 作为 ingress controller](/container/集群部署/ingress/traefik)
 
 ### 配置 nginx ingress
 
-[使用 nginx 作为 ingress controller](/container/k8s/ingress nginx)
+[使用 nginx 作为 ingress controller](/container/集群部署/ingress/nginx)
 
 ### 卸载k3s master节点
 ``` shell
