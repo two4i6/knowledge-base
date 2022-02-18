@@ -1,4 +1,4 @@
-# Lens
+# 🔭 Lens
 
 [Lens](https://k8slens.dev) 是一个开源的用于管理Kubernetes集群的IDE
 
@@ -6,9 +6,13 @@
 
 ---
 
-## 安装Lens
+## 💿 安装Lens
 
-### 添加集群
+[下载Lens](https://k8slens.dev)
+
+---
+
+## 🏠 添加集群
 
 ![Lens](img/lens02.png)
 
@@ -18,9 +22,11 @@
 
 以 ```k3s``` 为列，```kubeconfig``` 信息位于 ```/etc/rancher/k3s/k3s.yaml```.
 
-> 如果不在host上运行，注意需要修改对应的server地址.
+> ⚠️ 如果不在host上运行，注意需要修改对应的server地址.
 
-### 配置metric
+---
+
+## 📃 配置 metric
 
 刚添加的集群需要安装相应的插件来启动metric.
 
@@ -31,5 +37,3 @@
 ![Lens](img/lens04.png)
 
 ---
-
-## 

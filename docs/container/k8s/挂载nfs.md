@@ -1,5 +1,6 @@
-# 直接挂载nfs在 depolyments
+# 📁 挂载NFS
 
+## ⚙️ depolyments / StatefulSets
 ``` yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -32,9 +33,8 @@ spec:
           server: 172.26.204.144
 ```
 
-如果出现错误 ```Kubernetes NFS volume mount fail with exit status 32```
-
-再每个节点安装
+## 🕵️‍♀️ 常见问题
+如果出现错误 ```Kubernetes NFS volume mount fail with exit status 32```，需要再每个节点安装 ```nfs-common```。
 ```
 apt-get install -y nfs-common
 ```

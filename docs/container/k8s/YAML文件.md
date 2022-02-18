@@ -1,6 +1,6 @@
-# YAML
+# 📃 YAML 文件
 
-## 创建 YAML 文件
+## 🖨️ 创建 YAML 文件
 ``` yaml
 apiVersion: apps/v1	#与k8s集群版本有关，使用 kubectl api-versions 即可查看当前集群支持的版本
 kind: Deployment	#该配置的类型，我们使用的是 Deployment
@@ -23,7 +23,7 @@ spec:	        #这是关于该Deployment的描述，可以理解为你期待该D
         image: nginx:1.7.9	#使用镜像nginx:1.7.9创建container，该container默认80端口可访问
 ```
 
-## 应用 YAML 文件
+## 💻 应用 YAML 文件
 ``` 
 kubectl apply -f xxx-deployment.yaml
 ```

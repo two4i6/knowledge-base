@@ -1,4 +1,4 @@
-# 安装Rancher
+# 🐮 Rancher
 
 ## 添加Helm chart源
 ```

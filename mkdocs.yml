@@ -25,3 +25,5 @@ theme:
     - navigation.top
   plugins:
     - tags
+  markdown_extensions:
+    - meta

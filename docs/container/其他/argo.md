@@ -1,4 +1,4 @@
-# Argo Workflow
+# 📅 Argo Workflow
 
 ---
 

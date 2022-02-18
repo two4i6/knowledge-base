@@ -1,7 +1,9 @@
-# Dockerfile
+# 🐳 Dockerfile
 Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。
 
-## 构建第一个镜像
+---
+
+## 💿 构建第一个镜像
 
 ### 创建Dockerfile
 ``` Dockerfile
@@ -20,7 +22,9 @@ docker build -t nginx-local:latest .
 
 上下文路径，是指 docker 在构建镜像，有时候想要使用到本机的文件（比如复制），docker build 命令得知这个路径后，会将路径下的所有内容打包。
 
-## 添加文件到镜像
+---
+
+## 📃 添加文件到镜像
 
 ### 修改Dockerfile
 ``` Dockerfile
@@ -42,7 +46,9 @@ COPY hom* /mydir/
 COPY hom?.txt /mydir/
 ```
 
-## 添加文件夹到镜像
+---
+
+## 📁 添加文件夹到镜像
 
 ### 修改Dockerfile
 ``` Dockerfile
@@ -55,3 +61,5 @@ Add ./html /usr/share/nginx/html/
 ```ADD``` 的优点：在执行 <源文件> 为 tar 压缩文件的话，压缩格式为 gzip, bzip2 以及 xz 的情况下，会自动复制并解压到 <目标路径>。
 
 ```ADD``` 的缺点：在不解压的前提下，无法复制 tar 压缩文件。会令镜像构建缓存失效，从而可能会令镜像构建变得比较缓慢。具体是否使用，可以根据是否需要自动解压来决定。
+
+---
