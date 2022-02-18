@@ -1,4 +1,4 @@
-# Argo
+# Argo Workflow
 
 ---
 
@@ -63,6 +63,6 @@ kubectl -n argo exec pod/argo-argo-workflows-server-5f5889464c-f8fjm -- argo aut
 
 ## ⚠️ 常见问题
 
-pod pending 显示 ```MountVolume.SetUp failed for volume “docker-sock” ```
+pod 卡在 pending 并显示 ```MountVolume.SetUp failed for volume “docker-sock” ```
 
 需要把 ```containerRuntimeExecutor: docker``` 修改为 ```containerRuntimeExecutor: k8sapi```
