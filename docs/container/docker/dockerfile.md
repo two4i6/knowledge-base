@@ -24,7 +24,7 @@ docker build -t nginx-local:latest .
 
 ---
 
-## 📃 添加文件到镜像
+## 📃 COPY 添加文件到镜像
 
 ### 修改Dockerfile
 ``` Dockerfile
@@ -48,7 +48,7 @@ COPY hom?.txt /mydir/
 
 ---
 
-## 📁 添加文件夹到镜像
+## 📁 ADD 添加文件夹到镜像
 
 ### 修改Dockerfile
 ``` Dockerfile
