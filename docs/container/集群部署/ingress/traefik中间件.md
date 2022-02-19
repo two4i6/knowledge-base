@@ -103,7 +103,7 @@ spec:
     secret: authsecret
 ```
 
-### 声明secret
+### 声明 secret
 密码必须用 MD5，SHA1 或者 BCrypt 编码。
 ``` yaml
 apiVersion: v1
@@ -133,5 +133,6 @@ spec:
       name: #处理错误信息的service
       port: 80
 ```
+
 > 关于 service 可以参考 [traefik全局错误页面](traefik全局错误页面.md)
 ---
