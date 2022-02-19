@@ -13,7 +13,7 @@ tags:
 
 ## 🏠 创建一个master节点并禁用自带的 load balance 和 treafik
 ``` shell
-curl -sfL https://get.k3s.io | sh -s - server --cluster-init - --disable traefik --disable servicelb
+curl -sfL https://get.k3s.io | sh -s - server --cluster-init - --disable traefik --disable servicelb --disable local-storage
 ```
 
 ---
@@ -41,7 +41,7 @@ sudo echo 'server: "https://kube-vip地址:6443"' >> /etc/rancher/k3s/config.yam
 
 ### 安装
 ``` shell
-curl -sfL https://get.k3s.io | sh -s - --disable traefik --disable servicelb
+curl -sfL https://get.k3s.io | sh -s - --disable traefik --disable servicelb --disable local-storage
 ```
 
 ---
