@@ -68,7 +68,7 @@ spec:
       - "500-599"
     query: /{status}.html
     service:
-      name: #处理错误信息的service
+      name: errorpage
       port: 80
 ```
 关于 middleware 请参考 [traefik中间件](traefik中间件.md)
@@ -80,13 +80,15 @@ kind: Ingress
 metadata:
   name: errorpage
   # 使用 errorpage 中间件
+  annotations:
+  traefik.ingress.kubernetes.io/router.priority: "1"
   traefik.ingress.kubernetes.io/router.middlewares: default-errorpage@kubernetescrd
 spec:
   defaultBackend:
     service:
       name: errorpage # 可以使用一个空的web server
       port:
-        number: 8080
+        number: 80
 ```
 
 > ⚠️ 这个方法并不适用需要TLS认证的页面
